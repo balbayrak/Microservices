@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: rabbitmq
+  namespace: default
+spec:
+  ports:
+  - port: 15672
+    targetPort: 15672
+    name: discovery
+    protocol: TCP
+  - port: 5672
+    targetPort: 5672
+    name: amqp
+    protocol: TCP
+  selector:
+    app: rabbitmq
+  type: NodePort

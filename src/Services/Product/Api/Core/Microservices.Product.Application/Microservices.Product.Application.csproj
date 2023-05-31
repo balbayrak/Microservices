@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Core\Application\Microservices.Application\Microservices.Application.csproj" />
+    <ProjectReference Include="..\..\..\..\..\Core\Integration\Microservices.Integration\Microservices.Integration.csproj" />
+    <ProjectReference Include="..\..\..\..\Stock\Api\Infrastructure\Microservices.Stock.IntegrationEvent\Microservices.Stock.IntegrationEvents.csproj" />
+    <ProjectReference Include="..\Microservices.Product.Domain\Microservices.Product.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Behaviours\" />
+  </ItemGroup>
+
+</Project>

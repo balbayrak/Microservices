@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-SagaStateMachineWorkerService-461341F2-366A-4EA4-9A7B-A9E1131C9787</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="MassTransit.AspNetCore" Version="7.3.1" />
+	  <PackageReference Include="MassTransit.EntityFrameworkCore" Version="8.0.9" />
+	  <PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="7.3.1" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.1" />
+	  <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
+	  <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Persistence\Microservices.Persistence.Repository.EfCore\Microservices.Persistence.Repository.EfCore.csproj" />
+    <ProjectReference Include="..\..\Order\Api\Infrastructure\Microservices.Order.IntegrationEvents\Microservices.Order.IntegrationEvents.csproj" />
+    <ProjectReference Include="..\..\Payment\Api\Infrastructure\Microservices.Payment.IntegrationEvents\Microservices.Payment.IntegrationEvents.csproj" />
+    <ProjectReference Include="..\..\Stock\Api\Infrastructure\Microservices.Stock.IntegrationEvent\Microservices.Stock.IntegrationEvents.csproj" />
+  </ItemGroup>
+</Project>

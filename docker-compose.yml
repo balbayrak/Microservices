@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+  #mongodb:
+  #  image: mongo
+  #  restart: always
+  #  environment:
+  #    MONGO_INITDB_ROOT_USERNAME: root
+  #    MONGO_INITDB_ROOT_PASSWORD: admin
+  #  ports:
+  #    - 27017:27017
+
+
+  microservices.product.webapi:
+    image: ${DOCKER_REGISTRY-}microservicesproductwebapi
+    build:
+      context: .
+      dockerfile: src/Product/Api/WebApi/Microservices.Product.WebApi/Dockerfile
+    ports:
+      - "5011:80"
+  microservices.stock.webapi:
+    image: ${DOCKER_REGISTRY-}microservicesstockwebapi
+    build:
+      context: .
+      dockerfile: src/Services/Stock/Api/Webapi/Microservices.Stock.WebApi/Dockerfile
+

@@ -1,0 +1,10 @@
+## All resources will be created in this namespace
+## To delete all resources created by this example, simply delete this namespace:
+## kubectl delete -f rabbitmq_statefulsets
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: null
+  name: rabbitmq-cluster
+spec: {}
+status: {}

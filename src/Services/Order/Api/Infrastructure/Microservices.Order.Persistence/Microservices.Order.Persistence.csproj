@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Core\Persistence\Microservices.Persistence.Repository.EfCore\Microservices.Persistence.Repository.EfCore.csproj" />
+    <ProjectReference Include="..\..\Core\Microservices.Order.Application\Microservices.Order.Application.csproj" />
+    <ProjectReference Include="..\..\Core\Microservices.Order.Domain\Microservices.Order.Domain.csproj" />
+    <ProjectReference Include="..\Microservices.Order.Integration\Microservices.Order.Integration.csproj" />
+  </ItemGroup>
+
+</Project>

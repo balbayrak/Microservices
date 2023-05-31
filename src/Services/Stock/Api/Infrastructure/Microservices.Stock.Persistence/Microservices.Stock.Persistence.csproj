@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Core\Persistence\Microservices.Persistence.Repository.EfCore\Microservices.Persistence.Repository.EfCore.csproj" />
+    <ProjectReference Include="..\..\..\..\Product\Api\Infrastructure\Microservices.Product.IntegrationEvents\Microservices.Product.IntegrationEvents.csproj" />
+    <ProjectReference Include="..\..\Core\Microservices.Stock.Application\Microservices.Stock.Application.csproj" />
+    <ProjectReference Include="..\..\Core\Microservices.Stock.Domain\Microservices.Stock.Domain.csproj" />
+    <ProjectReference Include="..\Microservices.Stock.Integration\Microservices.Stock.Integration.csproj" />
+  </ItemGroup>
+
+</Project>

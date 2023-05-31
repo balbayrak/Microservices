@@ -1,0 +1,61 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-product-api
+data:
+  "appsettings.Development.json": |-
+    {
+        "Logging": {
+            "LogLevel": {
+                "Default": "Information",
+                "Microsoft.AspNetCore": "Warning"
+            }
+        },
+        "Serilog": {
+            "MinimumLevel": {
+            "Default": "Information",
+            "Override": {
+                "Microsoft": "Information",
+                "System": "Warning"
+            }
+        },
+        "ElasticConfiguration": {
+            "Uri": "http://192.168.1.21:9200",
+            //"Username": "admin",
+            //"Password": "admin",
+            "IndexName": "product-api"
+        },
+        "DatabaseSettings": {
+            "ConnectionString": "",
+            "DatabaseName": "ProductDb"
+        },
+        "MassTransit": {
+            "BusStartStartTimeoutSeconds": 30,
+            "BusStartStopTimeoutSeconds": 30,
+            "RetryLimitCount": 2,
+            "InitialIntervalSeconds": 3,
+            "IntervalIncrementSeconds": 3,
+            "ConcurrencyLimit": 4,
+            "BrokerName": "RabbitMq",
+            "MassTransitBusOptions": [
+            {
+                "Name": "RabbitMq",
+                "Host": "
+                "BrokerType": 1,
+                "BusBrokerName": "RabbitMq",
+                "HostName": "192.168.1.21", //pod ismi 
+                "VirtualHost": "/",
+                "UserName": "admin",
+                "Password": "123456"
+            }]   
+        },
+        "DistributedLockOption": {
+            "DistributedLockType": 1,
+            "BaseUrl": "192.168.1.21",
+            "Port": 6379,
+            "ExpiryTimeFromSeconds": 3,
+            "WaitTimeFromSeconds": 5,
+            "RetryTimeFromMilliseconds": 300,
+            "LogLockingProcess": true
+        }
+    }

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Core\Integration\Microservices.Integration\Microservices.Integration.csproj" />
+    <ProjectReference Include="..\Microservices.Payment.IntegrationEvents\Microservices.Payment.IntegrationEvents.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Core\Integration\Microservices.Integration\Microservices.Integration.csproj" />
+    <ProjectReference Include="..\..\Core\Microservices.Stock.Application\Microservices.Stock.Application.csproj" />
+    <ProjectReference Include="..\Microservices.Stock.IntegrationEvent\Microservices.Stock.IntegrationEvents.csproj" />
+  </ItemGroup>
+
+</Project>

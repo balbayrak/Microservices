@@ -188,6 +188,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Redis", "Redis", "{BC38A5B0
 		DevOps\k8s\Redis\service.yaml = DevOps\k8s\Redis\service.yaml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mongo", "Mongo", "{744894F9-3A27-4E11-8E42-C66F85CA6DF7}"
+	ProjectSection(SolutionItems) = preProject
+		DevOps\k8s\Mongo\mongo-pv.yaml = DevOps\k8s\Mongo\mongo-pv.yaml
+		DevOps\k8s\Mongo\mongo-pvc.yaml = DevOps\k8s\Mongo\mongo-pvc.yaml
+		DevOps\k8s\Mongo\mongo-secret.yaml = DevOps\k8s\Mongo\mongo-secret.yaml
+		DevOps\k8s\Mongo\namespace.yaml = DevOps\k8s\Mongo\namespace.yaml
+		DevOps\k8s\Mongo\service.yaml = DevOps\k8s\Mongo\service.yaml
+		DevOps\k8s\Mongo\statefulset.yaml = DevOps\k8s\Mongo\statefulset.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -434,6 +444,7 @@ Global
 		{89AE5388-0A16-4F67-BAF0-1D047429C8F3} = {C22212D9-5498-43A3-B881-54764EC48206}
 		{0E3302A1-BC81-42BD-837A-7CDE43903B04} = {C22212D9-5498-43A3-B881-54764EC48206}
 		{BC38A5B0-7A3B-4811-BE43-75F8683C86B5} = {C22212D9-5498-43A3-B881-54764EC48206}
+		{744894F9-3A27-4E11-8E42-C66F85CA6DF7} = {C22212D9-5498-43A3-B881-54764EC48206}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E94EA2D5-FEAC-4ACA-9FBA-B303635E715D}

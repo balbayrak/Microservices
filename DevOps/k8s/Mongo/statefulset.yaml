@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  namespace: mongo-cluster
+  creationTimestamp: null
+  labels:
+    app: mongo
+  name: mongo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mongo
+    spec:
+      serviceAccountName: mongo-svc
+      terminationGracePeriodSeconds: 10
+      containers:
+      - image: mongo
+        name: mongo
+        args: ["--dbpath","/data/db"]
+        #livenessProbe:
+        #  exec:
+        #    command:
+        #      - mongo
+        #      - --disableImplicitSessions
+        #      - --eval
+        #      - "db.adminCommand('ping')"
+        #  initialDelaySeconds: 30
+        #  periodSeconds: 10
+        #  timeoutSeconds: 5
+        #  successThreshold: 1
+        #  failureThreshold: 6
+        #readinessProbe:
+        #  exec:
+        #    command:
+        #      - mongo
+        #      - --disableImplicitSessions
+        #      - --eval
+        #      - "db.adminCommand('ping')"
+        #  initialDelaySeconds: 30
+        #  periodSeconds: 10
+        #  timeoutSeconds: 5
+        #  successThreshold: 1
+        #  failureThreshold: 6
+        env:
+        - name: MONGO_INITDB_ROOT_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: username
+        - name: MONGO_INITDB_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: password
+        volumeMounts:
+        - name: "mongo-data-dir"
+          mountPath: "/data/db"
+      volumes:
+      - name: "mongo-data-dir"
+        persistentVolumeClaim:
+          claimName: "pvc-mongo"

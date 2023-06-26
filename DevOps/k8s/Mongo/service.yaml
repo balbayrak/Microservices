@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-svc
+  namespace: mongo-cluster
+spec:
+  ports:
+  - port: 27017
+    targetPort: 27017
+    name: discovery
+    protocol: TCP
+    nodePort: 32000
+  selector:
+    app: mongo
+  type: NodePort
